@@ -4,6 +4,15 @@ window = Tk()
 window.title("Notepad")
 window.geometry("500x300")
 
+mbar = Menu(window)
+mfile = Menu(mbar)
+mfile.add_command(label='Open')
+mfile.add_separator()
+mfile.add_command(label='Close')
+mbar.add_cascade(label='File', menu=mfile)
+mbar.add_cascade(label='Edit', menu=mfile)
+mbar.add_cascade(label='View',menu=mfile )
+window.config(menu=mbar)
 
 
 window.mainloop()
